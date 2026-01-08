@@ -7,32 +7,32 @@ const services = [
   {
     icon: Monitor,
     title: "Web Development",
-    description: "Membangun website modern dengan CodeIgniter 4, Next.js, dan Express.js sesuai kebutuhan.",
+    description: "Building modern websites with CodeIgniter 4, Next.js, and Express.js tailored to your needs.",
   },
   {
     icon: Smartphone,
     title: "Responsive Design",
-    description: "Desain yang optimal di semua perangkat, dari mobile hingga desktop dengan pendekatan mobile-first.",
+    description: "Optimal design on all devices, from mobile to desktop with a mobile-first approach.",
   },
   {
     icon: Zap,
     title: "Backend Development",
-    description: "Pengembangan API dan backend menggunakan Express.js dengan integrasi database PostgreSQL/MySQL.",
+    description: "API and backend development using Express.js with PostgreSQL/MySQL database integration.",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
-    description: "Merancang interface yang intuitif dan menarik menggunakan Figma dengan fokus pada user experience.",
+    description: "Designing intuitive and attractive interfaces using Figma with a focus on user experience.",
   },
   {
     icon: Code2,
     title: "Database Management",
-    description: "Pengelolaan dan optimasi database PostgreSQL dan MySQL untuk aplikasi berbasis web.",
+    description: "Management and optimization of PostgreSQL and MySQL databases for web applications.",
   },
   {
     icon: LineChart,
     title: "Network Configuration",
-    description: "Konfigurasi Mikrotik, Ubuntu Server, dan manajemen jaringan komputer.",
+    description: "Mikrotik configuration, Ubuntu Server, and computer network management.",
   },
 ];
 
@@ -53,10 +53,10 @@ export const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="section-title">
-            Layanan <span className="text-gradient">Saya</span>
+            My <span className="text-gradient">Services</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            Solusi yang saya tawarkan untuk membantu mewujudkan project digital Anda
+            Solutions I offer to help bring your digital projects to life
           </p>
         </motion.div>
 

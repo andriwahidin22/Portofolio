@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Tentang", href: "#about" },
-  { label: "Project", href: "#projects" },
-  { label: "Layanan", href: "#services" },
-  { label: "Kontak", href: "#contact" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Services", href: "#services" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const Header = () => {
@@ -67,7 +67,7 @@ export const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Andri<span className="text-primary">.</span>
+            Portfolio<span className="text-primary">.</span>
           </motion.a>
 
           {/* Desktop Navigation */}
