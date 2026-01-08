@@ -32,10 +32,10 @@ export const About = () => {
           className="text-center mb-16"
         >
           <h2 className="section-title">
-            Tentang <span className="text-gradient">Saya</span>
+            About <span className="text-gradient">Me</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            Mengenal lebih dekat siapa saya dan apa yang saya lakukan
+            Get to know more about who I am and what I do
           </p>
         </motion.div>
 
@@ -49,23 +49,23 @@ export const About = () => {
           >
             <div className="card-gradient p-8 rounded-2xl border border-border">
               <h3 className="text-2xl font-display font-semibold mb-4 text-foreground">
-                Fresh Graduate D3 Manajemen Informatika
+                Fresh Graduate D3 Information Management
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Halo! Saya Andri Wahidin, lulusan Politeknik Negeri Lampung dengan 
-                  IPK 3.65/4.00. Saya memiliki passion dalam pengembangan aplikasi 
-                  berbasis web dan memiliki pengalaman PKL di CV Newus Technology.
+                  Hello! I'm Andri Wahidin, a graduate from Politeknik Negeri Lampung with 
+                  a GPA of 3.65/4.00. I have a passion for web application development 
+                  and have internship experience at CV Newus Technology.
                 </p>
                 <p>
-                  Selama PKL, saya berperan sebagai Backend Developer pada proyek 
-                  E-Tiket Museum Lampung, mengembangkan API menggunakan Express.js, 
-                  dan terlibat dalam desain UI/UX menggunakan Figma.
+                  During my internship, I worked as a Backend Developer on the 
+                  E-Ticket Museum Lampung project, developing APIs using Express.js, 
+                  and was involved in UI/UX design using Figma.
                 </p>
                 <p>
-                  Saya juga memiliki sertifikasi BNSP sebagai Junior Web Programmer 
-                  dan sertifikat NDG Linux Essentials dari Cisco Networking Academy.
-                  Terampil dalam komunikasi, kerja sama tim, dan pemecahan masalah.
+                  I also hold BNSP certification as a Junior Web Programmer 
+                  and NDG Linux Essentials certificate from Cisco Networking Academy.
+                  Skilled in communication, teamwork, and problem-solving.
                 </p>
               </div>
             </div>

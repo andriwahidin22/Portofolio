@@ -48,8 +48,8 @@ export const Contact = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: "Pesan Terkirim! 🎉",
-      description: "Terima kasih telah menghubungi saya. Saya akan segera merespons.",
+      title: "Message Sent! 🎉",
+      description: "Thank you for contacting me. I will respond soon.",
     });
 
     setIsSubmitting(false);
@@ -69,10 +69,10 @@ export const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="section-title">
-            Hubungi <span className="text-gradient">Saya</span>
+            Contact <span className="text-gradient">Me</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            Punya project menarik? Mari kita diskusikan dan wujudkan bersama!
+            Have an interesting project? Let's discuss and bring it to life together!
           </p>
         </motion.div>
 
@@ -86,12 +86,12 @@ export const Contact = () => {
           >
             <div className="card-gradient p-8 rounded-2xl border border-border">
               <h3 className="text-2xl font-display font-semibold text-foreground mb-6">
-                Mari Berkolaborasi
+                Let's Collaborate
               </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Saya selalu terbuka untuk mendiskusikan project baru, ide kreatif, 
-                atau kesempatan untuk menjadi bagian dari visi Anda. Jangan ragu 
-                untuk menghubungi saya!
+                I'm always open to discussing new projects, creative ideas, 
+                or opportunities to be part of your vision. Don't hesitate 
+                to reach out!
               </p>
 
               {/* Contact details */}
@@ -118,7 +118,7 @@ export const Contact = () => {
 
               {/* Social links */}
               <div className="mt-8 pt-8 border-t border-border">
-                <p className="text-sm text-muted-foreground mb-4">Ikuti saya di:</p>
+                <p className="text-sm text-muted-foreground mb-4">Follow me on:</p>
                 <div className="flex gap-4">
                   {socialLinks.map(({ icon: Icon, href, label }) => (
                     <a
@@ -145,13 +145,13 @@ export const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="card-gradient p-8 rounded-2xl border border-border">
               <h3 className="text-2xl font-display font-semibold text-foreground mb-6">
-                Kirim Pesan
+                Send Message
               </h3>
 
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Nama Lengkap
+                    Full Name
                   </label>
                   <Input
                     id="name"
@@ -191,12 +191,12 @@ export const Contact = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Pesan
+                    Message
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Ceritakan tentang project Anda..."
+                    placeholder="Tell me about your project..."
                     rows={5}
                     required
                     className="bg-secondary border-border focus:border-primary resize-none"
@@ -209,10 +209,10 @@ export const Contact = () => {
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-box py-6 text-lg font-medium"
                 >
                   {isSubmitting ? (
-                    "Mengirim..."
+                    "Sending..."
                   ) : (
                     <>
-                      Kirim Pesan <Send className="ml-2 w-5 h-5" />
+                      Send Message <Send className="ml-2 w-5 h-5" />
                     </>
                   )}
                 </Button>

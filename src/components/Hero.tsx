@@ -31,7 +31,7 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Halo, saya
+            Hi, I'm
           </motion.p>
 
           {/* Name */}
@@ -64,9 +64,9 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            Lulusan D3 Manajemen Informatika Politeknik Negeri Lampung dengan pengalaman 
-            dalam pengembangan aplikasi berbasis web. Terampil dalam HTML, CSS, JavaScript, 
-            CodeIgniter 4, Next.js, dan Express.js.
+            D3 Information Management graduate from Politeknik Negeri Lampung with experience 
+            in web application development. Skilled in HTML, CSS, JavaScript, 
+            CodeIgniter 4, Next.js, and Express.js.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -80,14 +80,14 @@ export const Hero = () => {
               onClick={handleScrollToContact}
               className="bg-primary text-primary-foreground hover:bg-primary/90 glow-box px-8 py-6 text-lg font-medium"
             >
-              Hubungi Saya
+              Contact Me
             </Button>
             <Button
               variant="outline"
               onClick={handleScrollToProjects}
               className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary px-8 py-6 text-lg font-medium"
             >
-              Lihat Project
+              View Projects
             </Button>
           </motion.div>
 
