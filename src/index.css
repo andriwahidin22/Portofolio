@@ -135,4 +135,20 @@
     0%, 100% { box-shadow: var(--glow-primary); }
     50% { box-shadow: var(--glow-strong); }
   }
+
+  /* Custom scrollbar hide utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .scrollbar-hide {
+      overflow-x: visible !important;
+    }
+  }
 }

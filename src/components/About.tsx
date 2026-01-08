@@ -9,13 +9,15 @@ const skills = [
   { name: "Next.js", level: 75 },
   { name: "Express.js", level: 80 },
   { name: "PostgreSQL & MySQL", level: 78 },
-  { name: "Figma (UI/UX)", level: 75 },
+  { name: "Laravel", level: 80 },
+  { name: "codeigniter 4", level: 80 },
+  { name: "Figma (UI/UX)", level: 50 },
   { name: "Git & GitHub", level: 80 },
 ];
 
 const technologies = [
-  "HTML", "CSS", "JavaScript", "CodeIgniter 4", "Next.js", "Express.js",
-  "PostgreSQL", "MySQL", "Figma", "Git", "REST API", "Ubuntu Server", "Mikrotik"
+  "HTML", "CSS", "JavaScript", "CodeIgniter 4", "Next.js", "Express.js", "codeigniter 4", "Laravel",
+  "PostgreSQL", "MySQL", "Figma", "Git", "REST API", "Ubuntu Server", "Mikrotik,", "Networking"
 ];
 
 export const About = () => {

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Monitor, Smartphone, Zap, Palette, Code2, LineChart } from "lucide-react";
+import { Monitor, Smartphone, Zap, Cpu, Code2, LineChart } from "lucide-react";
 
 const services = [
   {
@@ -20,9 +20,9 @@ const services = [
     description: "API and backend development using Express.js with PostgreSQL/MySQL database integration.",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Designing intuitive and attractive interfaces using Figma with a focus on user experience.",
+    icon: Cpu,
+    title: "IT Support & Network",
+    description: "Providing technical support, network configuration with Mikrotik, and Ubuntu server administration.",
   },
   {
     icon: Code2,
