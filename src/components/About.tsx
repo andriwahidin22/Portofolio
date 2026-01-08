@@ -3,19 +3,19 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-  { name: "HTML5", level: 95 },
-  { name: "CSS3 / Tailwind", level: 90 },
-  { name: "JavaScript", level: 88 },
-  { name: "TypeScript", level: 85 },
-  { name: "React.js", level: 90 },
-  { name: "Next.js", level: 82 },
-  { name: "Vue.js", level: 75 },
-  { name: "Git & GitHub", level: 85 },
+  { name: "HTML & CSS", level: 90 },
+  { name: "JavaScript", level: 85 },
+  { name: "CodeIgniter 4", level: 80 },
+  { name: "Next.js", level: 75 },
+  { name: "Express.js", level: 80 },
+  { name: "PostgreSQL & MySQL", level: 78 },
+  { name: "Figma (UI/UX)", level: 75 },
+  { name: "Git & GitHub", level: 80 },
 ];
 
 const technologies = [
-  "React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion",
-  "Redux", "Vue.js", "SASS", "Git", "Figma", "REST API", "GraphQL"
+  "HTML", "CSS", "JavaScript", "CodeIgniter 4", "Next.js", "Express.js",
+  "PostgreSQL", "MySQL", "Figma", "Git", "REST API", "Ubuntu Server", "Mikrotik"
 ];
 
 export const About = () => {
@@ -49,25 +49,23 @@ export const About = () => {
           >
             <div className="card-gradient p-8 rounded-2xl border border-border">
               <h3 className="text-2xl font-display font-semibold mb-4 text-foreground">
-                Frontend Developer dengan 5+ Tahun Pengalaman
+                Fresh Graduate D3 Manajemen Informatika
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Halo! Saya Andri Wahidin, seorang Frontend Developer yang passionate 
-                  dalam menciptakan pengalaman web yang luar biasa. Saya percaya bahwa 
-                  sebuah website yang baik adalah kombinasi sempurna antara estetika 
-                  visual dan fungsionalitas.
+                  Halo! Saya Andri Wahidin, lulusan Politeknik Negeri Lampung dengan 
+                  IPK 3.65/4.00. Saya memiliki passion dalam pengembangan aplikasi 
+                  berbasis web dan memiliki pengalaman PKL di CV Newus Technology.
                 </p>
                 <p>
-                  Dengan pengalaman lebih dari 5 tahun di industri web development, 
-                  saya telah membantu berbagai klien dari startup hingga enterprise 
-                  untuk mewujudkan visi digital mereka. Keahlian utama saya adalah 
-                  React.js, TypeScript, dan modern CSS frameworks.
+                  Selama PKL, saya berperan sebagai Backend Developer pada proyek 
+                  E-Tiket Museum Lampung, mengembangkan API menggunakan Express.js, 
+                  dan terlibat dalam desain UI/UX menggunakan Figma.
                 </p>
                 <p>
-                  Di luar coding, saya aktif mengikuti perkembangan teknologi terbaru, 
-                  berkontribusi ke open source, dan berbagi pengetahuan melalui 
-                  artikel dan mentoring.
+                  Saya juga memiliki sertifikasi BNSP sebagai Junior Web Programmer 
+                  dan sertifikat NDG Linux Essentials dari Cisco Networking Academy.
+                  Terampil dalam komunikasi, kerja sama tim, dan pemecahan masalah.
                 </p>
               </div>
             </div>
