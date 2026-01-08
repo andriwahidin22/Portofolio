@@ -7,7 +7,7 @@ const services = [
   {
     icon: Monitor,
     title: "Web Development",
-    description: "Membangun website modern dan responsif dengan teknologi terkini seperti React, Next.js, dan Vue.js.",
+    description: "Membangun website modern dengan CodeIgniter 4, Next.js, dan Express.js sesuai kebutuhan.",
   },
   {
     icon: Smartphone,
@@ -16,23 +16,23 @@ const services = [
   },
   {
     icon: Zap,
-    title: "Performance Optimization",
-    description: "Optimasi kecepatan loading, Core Web Vitals, dan pengalaman pengguna yang seamless.",
+    title: "Backend Development",
+    description: "Pengembangan API dan backend menggunakan Express.js dengan integrasi database PostgreSQL/MySQL.",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
-    description: "Merancang interface yang intuitif dan menarik dengan fokus pada user experience.",
+    description: "Merancang interface yang intuitif dan menarik menggunakan Figma dengan fokus pada user experience.",
   },
   {
     icon: Code2,
-    title: "Clean Code",
-    description: "Kode yang terstruktur, mudah di-maintain, dan mengikuti best practices industri.",
+    title: "Database Management",
+    description: "Pengelolaan dan optimasi database PostgreSQL dan MySQL untuk aplikasi berbasis web.",
   },
   {
     icon: LineChart,
-    title: "SEO Friendly",
-    description: "Optimasi mesin pencari untuk meningkatkan visibility dan ranking website Anda.",
+    title: "Network Configuration",
+    description: "Konfigurasi Mikrotik, Ubuntu Server, dan manajemen jaringan komputer.",
   },
 ];
 

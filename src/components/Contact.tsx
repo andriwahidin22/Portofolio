@@ -11,27 +11,27 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "andri.wahidin@email.com",
-    href: "mailto:andri.wahidin@email.com",
+    value: "andriwahidin22@gmail.com",
+    href: "mailto:andriwahidin22@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+62 812 3456 7890",
-    href: "tel:+6281234567890",
+    value: "082376860995",
+    href: "tel:+6282376860995",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "Jakarta, Indonesia",
+    value: "Villa Cendana Asri, Lampung",
     href: "#",
   },
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Github, href: "https://github.com/andriwahidin22", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/andriwahidin", label: "LinkedIn" },
+  { icon: Instagram, href: "https://instagram.com/andriwahidin_", label: "Instagram" },
 ];
 
 export const Contact = () => {

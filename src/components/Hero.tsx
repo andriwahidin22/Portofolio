@@ -52,8 +52,8 @@ export const Hero = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-display">
-              <span className="text-gradient glow-text">Frontend Developer</span>
-              <span className="text-muted-foreground"> & UI/UX Enthusiast</span>
+              <span className="text-gradient glow-text">Web Developer</span>
+              <span className="text-muted-foreground"> & Backend Enthusiast</span>
             </h2>
           </motion.div>
 
@@ -64,9 +64,9 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            Saya membangun pengalaman web yang intuitif, cepat, dan visual menarik 
-            dengan teknologi frontend modern. Menciptakan interface yang tidak hanya 
-            indah, tapi juga fungsional dan user-friendly.
+            Lulusan D3 Manajemen Informatika Politeknik Negeri Lampung dengan pengalaman 
+            dalam pengembangan aplikasi berbasis web. Terampil dalam HTML, CSS, JavaScript, 
+            CodeIgniter 4, Next.js, dan Express.js.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -101,9 +101,9 @@ export const Hero = () => {
             <span className="text-muted-foreground text-sm">Follow me:</span>
             <div className="flex gap-4">
               {[
-                { icon: Github, href: "https://github.com", label: "GitHub" },
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+                { icon: Github, href: "https://github.com/andriwahidin22", label: "GitHub" },
+                { icon: Linkedin, href: "https://linkedin.com/in/andriwahidin", label: "LinkedIn" },
+                { icon: Instagram, href: "https://instagram.com/andriwahidin_", label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
