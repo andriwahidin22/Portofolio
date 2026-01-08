@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Instagram, ArrowDown, Briefcase, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const PROFILE_IMAGE_SRC = "src/assets/Profile.JPEG";
+const PROFILE_IMAGE_SRC = "/assets/Profile.JPEG";
 
 export const Hero = () => {
   const handleScrollToContact = () => {
