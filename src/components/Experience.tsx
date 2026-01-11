@@ -90,12 +90,10 @@ export const Experience = () => {
   const organizations = experienceData.filter((item) => item.type === "organization");
 
   const openModal = (experience: ExperienceItem) => {
-    if (experience.images && experience.images.length > 0) {
-      setSelectedExperience(experience);
-      setCurrentImageIndex(0);
-      setIsModalOpen(true);
-      document.body.style.overflow = 'hidden';
-    }
+    setSelectedExperience(experience);
+    setCurrentImageIndex(0);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
@@ -190,18 +188,17 @@ export const Experience = () => {
         ))}
       </ul>
 
-      {/* View Certificate Button */}
-      {item.images && item.images.length > 0 && (
-        <Button
-          onClick={() => openModal(item)}
-          variant="outline"
-          size="sm"
-          className="mt-2 group-hover:border-primary group-hover:text-primary transition-colors"
-        >
-          <Eye className="w-4 h-4 mr-2" />
-          View Certificate ({item.images.length})
-        </Button>
-      )}
+      {/* View Details Button - Always visible */}
+      <Button
+        onClick={() => openModal(item)}
+        variant="outline"
+        size="sm"
+        className="mt-2 group-hover:border-primary group-hover:text-primary transition-colors"
+      >
+        <Eye className="w-4 h-4 mr-2" />
+        View Details
+        {item.images && item.images.length > 0 && ` (${item.images.length} Photos)`}
+      </Button>
     </motion.div>
   );
 
@@ -269,9 +266,9 @@ export const Experience = () => {
         </div>
       </div>
 
-      {/* Certificate Modal */}
+      {/* Experience Detail Modal */}
       <AnimatePresence>
-        {isModalOpen && selectedExperience && selectedExperience.images && (
+        {isModalOpen && selectedExperience && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -288,7 +285,11 @@ export const Experience = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="relative z-10 w-full max-w-5xl max-h-[90vh] overflow-auto bg-card rounded-2xl border border-border shadow-2xl"
+              className={`relative z-10 w-full max-h-[90vh] overflow-auto bg-card rounded-2xl border border-border shadow-2xl ${
+                selectedExperience.images && selectedExperience.images.length > 0 
+                  ? 'max-w-5xl' 
+                  : 'max-w-2xl'
+              }`}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -299,70 +300,96 @@ export const Experience = () => {
                 <X className="h-6 w-6" />
               </button>
 
-              <div className="grid lg:grid-cols-2 gap-0">
-                {/* Image Gallery */}
-                <div className="relative bg-muted aspect-video lg:aspect-auto lg:h-full min-h-[300px]">
-                  <img
-                    src={selectedExperience.images[currentImageIndex]}
-                    alt={`Certificate ${currentImageIndex + 1}`}
-                    className="w-full h-full object-contain"
-                  />
+              <div className={`grid gap-0 ${
+                selectedExperience.images && selectedExperience.images.length > 0 
+                  ? 'lg:grid-cols-2' 
+                  : 'grid-cols-1'
+              }`}>
+                {/* Image Gallery - Only show if images exist */}
+                {selectedExperience.images && selectedExperience.images.length > 0 && (
+                  <div className="relative bg-muted aspect-video lg:aspect-auto lg:h-full min-h-[300px]">
+                    <img
+                      src={selectedExperience.images[currentImageIndex]}
+                      alt={`Documentation ${currentImageIndex + 1}`}
+                      className="w-full h-full object-contain"
+                    />
 
-                  {/* Image Navigation */}
-                  {selectedExperience.images.length > 1 && (
-                    <>
-                      <button
-                        onClick={prevImage}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/80 backdrop-blur-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
-                      >
-                        <ChevronLeft className="h-6 w-6" />
-                      </button>
-                      <button
-                        onClick={nextImage}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/80 backdrop-blur-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
-                      >
-                        <ChevronRight className="h-6 w-6" />
-                      </button>
+                    {/* Image Navigation */}
+                    {selectedExperience.images.length > 1 && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/80 backdrop-blur-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                        >
+                          <ChevronLeft className="h-6 w-6" />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/80 backdrop-blur-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                        >
+                          <ChevronRight className="h-6 w-6" />
+                        </button>
 
-                      {/* Image Indicators */}
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                        {selectedExperience.images.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentImageIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-all ${
-                              index === currentImageIndex
-                                ? 'w-6 bg-primary'
-                                : 'bg-foreground/30 hover:bg-foreground/50'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </>
-                  )}
-                </div>
+                        {/* Image Indicators */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                          {selectedExperience.images.map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentImageIndex(index)}
+                              className={`w-2 h-2 rounded-full transition-all ${
+                                index === currentImageIndex
+                                  ? 'w-6 bg-primary'
+                                  : 'bg-foreground/30 hover:bg-foreground/50'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                )}
 
                 {/* Details */}
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
-                      <Award className="w-5 h-5 text-primary" />
+                      {selectedExperience.type === "internship" ? (
+                        <Briefcase className="w-5 h-5 text-primary" />
+                      ) : (
+                        <Users className="w-5 h-5 text-primary" />
+                      )}
                     </div>
-                    <span className="text-sm text-muted-foreground">Certificate</span>
+                    <span className="text-sm text-muted-foreground capitalize">
+                      {selectedExperience.type === "internship" ? "Internship" : "Organization"}
+                    </span>
+                    {selectedExperience.highlight && (
+                      <span className="inline-flex items-center gap-1 px-2 py-1 bg-yellow-500/10 text-yellow-500 text-xs rounded-full">
+                        <Star className="w-3 h-3 fill-yellow-500" />
+                        Award
+                      </span>
+                    )}
                   </div>
 
                   <h3 className="text-2xl font-display font-bold mb-2">
                     {selectedExperience.title}
                   </h3>
-                  <p className="text-lg text-muted-foreground mb-4">
+                  <p className="text-lg text-muted-foreground mb-2">
                     {selectedExperience.company}
                   </p>
+                  
+                  {selectedExperience.location && (
+                    <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
+                      <MapPin className="w-4 h-4" />
+                      <span>{selectedExperience.location}</span>
+                    </div>
+                  )}
 
                   <div className="flex items-center gap-2 text-primary mb-6">
                     <Calendar className="w-4 h-4" />
                     <span>{selectedExperience.period}</span>
                   </div>
 
+                  <h4 className="text-sm font-semibold text-foreground mb-3">Activities & Achievements:</h4>
                   <div className="space-y-2">
                     {selectedExperience.description.map((desc, i) => (
                       <div key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
@@ -371,6 +398,16 @@ export const Experience = () => {
                       </div>
                     ))}
                   </div>
+
+                  {/* No images message */}
+                  {(!selectedExperience.images || selectedExperience.images.length === 0) && (
+                    <div className="mt-6 p-4 bg-muted/50 rounded-xl border border-border text-center">
+                      <Award className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">
+                        Documentation photos coming soon
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
