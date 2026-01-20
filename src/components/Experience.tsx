@@ -31,7 +31,9 @@ const experienceData: ExperienceItem[] = [
       "Collaborated with team on UI/UX design using Figma",
       "Implemented secure authentication and authorization systems",
     ],
-    images: [],
+    images: [
+      "/assets/Experience/Internship/1.png",
+    ],
     type: "internship",
   },
   // Organizations
@@ -48,7 +50,10 @@ const experienceData: ExperienceItem[] = [
       "Volunteer for PDD Expo (LKS) National Vocational School Competition XXXII 2024",
       "Volunteer for PDD during the 40th Polinela Anniversary and Graduation Ceremony 2024",
     ],
-    images: [],
+    images: [
+      "/assets/Experience/HMJEKBIS/1.png",
+      "/assets/Experience/HMJEKBIS/2.png",
+    ],
     type: "organization",
     highlight: "Best Special Staff Award 2023",
   },
@@ -61,7 +66,9 @@ const experienceData: ExperienceItem[] = [
       "Vice Chairman (2022 – 2023)",
       "Coordinator for PDD at the PSHT Polinela National Pencak Silat Championship 2023",
     ],
-    images: [],
+    images: [
+      "/assets/Experience/PSHT/1.png",
+    ],
     type: "organization",
   },
   {
@@ -74,7 +81,9 @@ const experienceData: ExperienceItem[] = [
       "Managed social media and digital content",
       "Supported organizational events and documentation",
     ],
-    images: [],
+    images: [
+      "/assets/Experience/LDK/1.png",
+    ],
     type: "organization",
   },
 ];
