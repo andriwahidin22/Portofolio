@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Instagram, ArrowDown, Briefcase, User } from "lucide-react";
+import { Github, Linkedin, Instagram, ArrowDown, Briefcase, User, FileBadge, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DownloadButton } from "@/components/DownloadButton";
 
 const PROFILE_IMAGE_SRC = "/assets/Profile.JPEG";
 
@@ -107,18 +108,27 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
             >
+              <DownloadButton
+                fileUrl="/cv/Andri-Wahidin-CV.pdf"
+                fileName="Andri-Wahidin-CV.pdf"
+                label="Download CV"
+                subtitle="Updated Resume 2026"
+                icon={FileBadge}
+              />
+              <DownloadButton
+                fileUrl="/portfolio/Andri-Wahidin-Portfolio.pdf"
+                fileName="Andri-Wahidin-Portfolio.pdf"
+                label="Download Portfolio"
+                subtitle="Professional Showcase"
+                icon={FileText}
+                variant="secondary"
+              />
               <Button
+                variant="ghost"
                 onClick={handleScrollToContact}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 glow-box px-8 py-6 text-lg font-medium"
+                className="text-foreground hover:bg-primary/10 px-6 py-6 text-base font-medium"
               >
                 Contact Me
-              </Button>
-              <Button
-                variant="outline"
-                onClick={handleScrollToProjects}
-                className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary px-8 py-6 text-lg font-medium"
-              >
-                View Projects
               </Button>
             </motion.div>
 
