@@ -41,7 +41,7 @@ export const Services = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-24 relative" ref={ref}>
+    <section id="services" className="py-14 md:py-20 relative" ref={ref}>
       {/* Background accent */}
       <div className="absolute top-1/3 -left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
 

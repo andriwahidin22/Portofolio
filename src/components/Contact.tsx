@@ -71,7 +71,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative" ref={ref}>
+    <section id="contact" className="py-14 md:py-20 relative" ref={ref}>
       {/* Background accent */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
 
