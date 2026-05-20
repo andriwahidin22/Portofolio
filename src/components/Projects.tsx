@@ -341,7 +341,7 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-32 relative">
+    <section id="projects" className="py-14 md:py-20 relative">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-primary/5 -z-10" />
 
