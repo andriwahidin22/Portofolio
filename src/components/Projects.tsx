@@ -571,7 +571,7 @@ export const Projects = () => {
                       <img
                         src={selectedProject.images[currentImageIndex]}
                         alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
-                        className="w-full h-full object-contain lg:object-cover"
+                        className="w-full h-full object-contain"
                       />
 
                       {/* Navigation Arrows */}
