@@ -533,7 +533,7 @@ export const Projects = () => {
               exit={{ opacity: 0, scale: 0.9 }}
             >
               <div
-                className="relative bg-card border border-border rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden"
+                className="relative bg-card border border-border rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto lg:overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
@@ -563,9 +563,9 @@ export const Projects = () => {
                   </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 h-full max-h-[90vh]">
+                <div className="grid lg:grid-cols-2 gap-8 lg:h-full lg:max-h-[90vh]">
                   {/* Left Column: Image Gallery */}
-                  <div className="relative h-full min-h-[400px] lg:min-h-auto bg-muted/20">
+                  <div className="relative h-[400px] lg:h-full bg-muted/20">
                     {/* Main Image */}
                     <div className="relative h-full overflow-hidden rounded-l-2xl">
                       <img
@@ -616,7 +616,7 @@ export const Projects = () => {
                   </div>
 
                   {/* Right Column: Project Details */}
-                  <div className="p-6 lg:p-8 overflow-y-auto">
+                  <div className="p-6 lg:p-8 lg:overflow-y-auto">
                     {/* Project Header */}
                     <div className="mb-6">
                       <div className="flex flex-wrap items-center gap-3 mb-4">
