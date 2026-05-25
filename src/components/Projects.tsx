@@ -527,13 +527,13 @@ export const Projects = () => {
 
             {/* Modal Content */}
             <motion.div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 z-50 overflow-y-auto p-4 lg:flex lg:items-center lg:justify-center"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
             >
               <div
-                className="relative bg-card border border-border rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto lg:overflow-hidden"
+                className="relative my-6 w-full max-w-6xl bg-card border border-border rounded-2xl max-h-[calc(100vh-3rem)] overflow-y-auto lg:my-0 lg:max-h-[90vh] lg:overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
@@ -563,7 +563,7 @@ export const Projects = () => {
                   </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 lg:h-full lg:max-h-[90vh]">
+                <div className="grid gap-8 lg:grid-cols-2 lg:h-[90vh] lg:min-h-0">
                   {/* Left Column: Image Gallery */}
                   <div className="relative h-[400px] lg:h-full bg-muted/20">
                     {/* Main Image */}
@@ -616,7 +616,7 @@ export const Projects = () => {
                   </div>
 
                   {/* Right Column: Project Details */}
-                  <div className="p-6 lg:p-8 lg:overflow-y-auto">
+                  <div className="min-h-0 p-6 lg:overflow-y-auto lg:p-8">
                     {/* Project Header */}
                     <div className="mb-6">
                       <div className="flex flex-wrap items-center gap-3 mb-4">
