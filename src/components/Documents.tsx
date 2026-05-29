@@ -5,15 +5,27 @@ import { DownloadButton } from "./DownloadButton";
 const documents = [
   {
     title: "Resume / CV",
-    subtitle: "ATS Friendly · Updated 2026",
+    subtitle: "English · ATS Friendly · Updated 2026",
     description:
-      "Professional modern resume highlighting education, skills, and experience. Optimized for Applicant Tracking Systems.",
-    fileUrl: "/cv/Andri-Wahidin-CV.pdf",
-    fileName: "Andri-Wahidin-CV.pdf",
+      "Professional modern resume in English highlighting education, skills, and experience. Optimized for Applicant Tracking Systems.",
+    fileUrl: "/cv/Andri-Wahidin-CV-English.pdf",
+    fileName: "Andri-Wahidin-CV-English.pdf",
     size: "≈ 180 KB",
     updated: "May 2026",
     icon: FileBadge,
     accent: "from-primary/30 to-primary/5",
+  },
+  {
+    title: "Resume / CV",
+    subtitle: "Bahasa Indonesia · ATS Friendly · Updated 2026",
+    description:
+      "Versi Bahasa Indonesia dari resume profesional, menampilkan pendidikan, skill, dan pengalaman. Ramah untuk Applicant Tracking Systems.",
+    fileUrl: "/cv/Andri-Wahidin-CV-Indonesian.pdf",
+    fileName: "Andri-Wahidin-CV-Indonesian.pdf",
+    size: "≈ 180 KB",
+    updated: "May 2026",
+    icon: FileBadge,
+    accent: "from-cyan-400/30 to-primary/5",
   },
   {
     title: "Portfolio Presentation",
@@ -58,7 +70,7 @@ export const Documents = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {documents.map((doc, i) => {
             const Icon = doc.icon;
             return (
