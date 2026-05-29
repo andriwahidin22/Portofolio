@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Instagram, ArrowDown, Briefcase, User, FileBadge, FileText } from "lucide-react";
+import { Github, Linkedin, Instagram, ArrowDown, Briefcase, User, FileBadge, FileText, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DownloadButton } from "@/components/DownloadButton";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const PROFILE_IMAGE_SRC = "/assets/Profile.JPEG";
 
@@ -108,13 +114,57 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
             >
-              <DownloadButton
-                fileUrl="/cv/Andri-Wahidin-CV.pdf"
-                fileName="Andri-Wahidin-CV.pdf"
-                label="Download CV"
-                subtitle="Updated Resume 2026"
-                icon={FileBadge}
-              />
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    type="button"
+                    aria-label="Download CV, choose language"
+                    className="group relative overflow-hidden rounded-2xl px-6 py-4 min-h-14 flex items-center gap-3 font-medium border backdrop-blur-xl transition-all duration-300 bg-gradient-to-r from-primary/90 to-primary text-primary-foreground border-primary/50 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_50px_-5px_hsl(var(--primary)/0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000" />
+                    <span className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm">
+                      <FileBadge className="w-5 h-5" />
+                    </span>
+                    <span className="relative flex flex-col items-start leading-tight text-left">
+                      <span className="text-sm font-semibold">Download CV</span>
+                      <span className="text-xs font-normal text-primary-foreground/80">Choose Language</span>
+                    </span>
+                    <ChevronDown className="relative w-4 h-4 ml-1 transition-transform group-data-[state=open]:rotate-180" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-64 bg-card/95 backdrop-blur-xl border-border">
+                  <DropdownMenuItem asChild>
+                    <a
+                      href="/cv/Andri-Wahidin-CV-English.pdf"
+                      download="Andri-Wahidin-CV-English.pdf"
+                      className="flex items-center gap-3 cursor-pointer py-3"
+                    >
+                      <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/15 text-primary">
+                        <FileBadge className="w-4 h-4" />
+                      </span>
+                      <span className="flex flex-col">
+                        <span className="text-sm font-semibold text-foreground">English</span>
+                        <span className="text-xs text-muted-foreground">ATS Friendly · 2026</span>
+                      </span>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href="/cv/Andri-Wahidin-CV-Indonesian.pdf"
+                      download="Andri-Wahidin-CV-Indonesian.pdf"
+                      className="flex items-center gap-3 cursor-pointer py-3"
+                    >
+                      <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/15 text-primary">
+                        <FileBadge className="w-4 h-4" />
+                      </span>
+                      <span className="flex flex-col">
+                        <span className="text-sm font-semibold text-foreground">Bahasa Indonesia</span>
+                        <span className="text-xs text-muted-foreground">ATS Friendly · 2026</span>
+                      </span>
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <DownloadButton
                 fileUrl="/portfolio/Andri-Wahidin-Portfolio.pdf"
                 fileName="Andri-Wahidin-Portfolio.pdf"
