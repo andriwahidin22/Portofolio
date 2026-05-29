@@ -287,7 +287,7 @@ export const Experience = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 overflow-y-auto p-4 lg:flex lg:items-center lg:justify-center"
             onClick={closeModal}
           >
             {/* Backdrop */}
@@ -299,7 +299,7 @@ export const Experience = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className={`relative z-10 w-full max-h-[90vh] overflow-auto bg-card rounded-2xl border border-border shadow-2xl ${
+              className={`relative z-10 w-full overflow-y-auto bg-card rounded-2xl border border-border shadow-2xl lg:max-h-[90vh] lg:overflow-hidden ${
                 selectedExperience.images && selectedExperience.images.length > 0 
                   ? 'max-w-5xl' 
                   : 'max-w-2xl'
@@ -314,14 +314,14 @@ export const Experience = () => {
                 <X className="h-6 w-6" />
               </button>
 
-              <div className={`grid gap-0 ${
+              <div className={`grid gap-0 lg:h-[90vh] lg:min-h-0 ${
                 selectedExperience.images && selectedExperience.images.length > 0 
                   ? 'lg:grid-cols-2' 
                   : 'grid-cols-1'
               }`}>
                 {/* Image Gallery - Only show if images exist */}
                 {selectedExperience.images && selectedExperience.images.length > 0 && (
-                  <div className="relative bg-muted aspect-video lg:aspect-auto lg:h-full min-h-[300px]">
+                  <div className="relative bg-muted aspect-video lg:aspect-auto lg:h-full min-h-[300px] lg:min-h-0">
                     <img
                       src={selectedExperience.images[currentImageIndex]}
                       alt={`Documentation ${currentImageIndex + 1}`}
@@ -364,7 +364,7 @@ export const Experience = () => {
                 )}
 
                 {/* Details */}
-                <div className="p-8">
+                <div className="p-8 min-h-0 lg:overflow-y-auto">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       {selectedExperience.type === "internship" ? (
