@@ -204,7 +204,7 @@ export const Certificates = () => {
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 whileHover={{ y: -6 }}
                 onClick={() => openAt(i)}
-                className="group relative text-left rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-border to-transparent"
+                className="group relative text-left rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-border to-transparent glow-border shine-hover"
               >
                 <div className="relative h-full rounded-[calc(1rem-1px)] bg-card/60 backdrop-blur-xl overflow-hidden">
                   {/* Preview */}
@@ -300,7 +300,7 @@ export const Certificates = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
                     whileHover={{ y: -4 }}
-                    className="group relative rounded-2xl border border-border bg-background/40 p-5 hover:border-primary/50 transition-colors"
+                    className="group relative rounded-2xl border border-border bg-background/40 p-5 hover:border-primary/50 transition-colors glow-border shine-hover"
                   >
                     <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-4">
                       <Cloud className="w-5 h-5" />
