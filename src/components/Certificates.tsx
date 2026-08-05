@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, X, ExternalLink, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { Award, X, ExternalLink, Sparkles, ChevronLeft, ChevronRight, Cloud, Trophy } from "lucide-react";
 
 type Category = "All" | "Professional" | "Skill" | "Organization" | "Training";
 
@@ -16,61 +16,61 @@ const certificates: Certificate[] = [
   {
     title: "Junior Web Programmer",
     issuer: "BNSP (Badan Nasional Sertifikasi Profesi)",
-    year: "2024",
+    year: "2025",
     category: "Professional",
     image: "/assets/Certificates/BNSP.png",
   },
   {
-    title: "Sertifikat Magang / Internship",
-    issuer: "Program Magang Profesional",
-    year: "2024",
+    title: "Praktik Kerja Lapangan — Backend Developer Intern",
+    issuer: "CV Newus Technology",
+    year: "2025",
     category: "Professional",
     image: "/assets/Certificates/Sertifikat_Magang.png",
   },
   {
-    title: "Cisco Networking Essentials",
+    title: "NDG Linux Essentials",
     issuer: "Cisco Networking Academy",
-    year: "2024",
+    year: "2025",
     category: "Skill",
     image: "/assets/Certificates/Sertif_Skil_CIsco.png",
   },
   {
-    title: "Dicoding Web Development",
+    title: "Spec-Driven Development dengan Kiro",
     issuer: "Dicoding Indonesia",
-    year: "2024",
+    year: "2026",
     category: "Skill",
     image: "/assets/Certificates/Sertif_Skil_Dicoding.png",
   },
   {
-    title: "Dicoding Fundamental",
+    title: "Belajar Dasar Cloud dan Generative AI di AWS",
     issuer: "Dicoding Indonesia",
-    year: "2024",
+    year: "2025",
     category: "Skill",
     image: "/assets/Certificates/Sertif_Skil_Dicoding_2.png",
   },
   {
-    title: "Dicoding Backend Learning Path",
+    title: "Memulai Pemrograman dengan Python",
     issuer: "Dicoding Indonesia",
-    year: "2024",
+    year: "2026",
     category: "Skill",
     image: "/assets/Certificates/Sertif_Skil_Dicoding_3.png",
   },
   {
     title: "Best Special Staff Award",
-    issuer: "HMJ EKBIS",
+    issuer: "HMJ EKBIS Politeknik Negeri Lampung",
     year: "2023",
     category: "Organization",
     image: "/assets/Certificates/Andri_HMJ_Award.png",
   },
   {
-    title: "Sertifikat Demisioner HMJ",
-    issuer: "Himpunan Mahasiswa Jurusan EKBIS",
-    year: "2023",
+    title: "Demisioner — Wakil Kepala Divisi Media dan Informasi",
+    issuer: "HMJ Ekonomi dan Bisnis, Politeknik Negeri Lampung",
+    year: "2025",
     category: "Organization",
     image: "/assets/Certificates/Sertifikat_Demisioner_HMJ.png",
   },
   {
-    title: "Sertifikat Demisioner PSHT",
+    title: "Demisioner — Wakil Ketua PSHT Komisariat Polinela",
     issuer: "Persaudaraan Setia Hati Terate",
     year: "2023",
     category: "Organization",
@@ -85,10 +85,41 @@ const certificates: Certificate[] = [
   },
   {
     title: "Pelatihan Penguatan Karakter",
-    issuer: "Program Pengembangan Diri",
-    year: "2023",
+    issuer: "Jurusan Ekonomi dan Bisnis, Politeknik Negeri Lampung",
+    year: "2024",
     category: "Training",
     image: "/assets/Certificates/SERTIF_Pelatihan_PENGUATAN_KARAKTER.png",
+  },
+];
+
+const googleProfileUrl =
+  "https://www.skills.google/public_profiles/2103966a-a7eb-4995-ae30-ef7d735d2cc9";
+
+const googleBadges = [
+  {
+    title: "Menggabungkan Semuanya: Bersiap untuk Pekerjaan sebagai Analis Keamanan Cloud",
+    track: "Google Cloud Cybersecurity",
+    date: "Jul 15, 2026",
+  },
+  {
+    title: "Strategi untuk Pengelolaan Risiko Keamanan Cloud",
+    track: "Google Cloud Cybersecurity",
+    date: "Jul 14, 2026",
+  },
+  {
+    title: "Pengantar Prinsip Keamanan dalam Cloud Computing",
+    track: "Google Cloud Cybersecurity",
+    date: "Jul 14, 2026",
+  },
+  {
+    title: "Menggunakan BigQuery Machine Learning untuk Inferensi",
+    track: "Data Analytics & ML",
+    date: "Jul 13, 2026",
+  },
+  {
+    title: "Gemini untuk Data Scientist dan Analis",
+    track: "AI & Data Analytics",
+    date: "2026",
   },
 ];
 
@@ -212,6 +243,79 @@ export const Certificates = () => {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Google Skills Badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto mt-16"
+        >
+          <div className="rounded-3xl p-[1px] bg-gradient-to-br from-primary/40 via-border to-transparent">
+            <div className="rounded-[calc(1.5rem-1px)] bg-card/60 backdrop-blur-xl p-6 md:p-8">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1 mb-3">
+                    <Cloud className="w-4 h-4 text-primary" />
+                    <span className="text-xs font-medium text-primary">Google Skills</span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+                    5 <span className="text-gradient">Google Cloud Skills Badges</span>
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-2 max-w-xl">
+                    Cloud Computing, Cybersecurity, Artificial Intelligence, dan Data Analytics — diverifikasi
+                    langsung melalui profil publik Google Skills.
+                  </p>
+                </div>
+                <div className="flex flex-col items-start md:items-end gap-3">
+                  <div className="flex items-center gap-2 text-sm">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-secondary/40 text-muted-foreground">
+                      <Trophy className="w-3.5 h-3.5 text-primary" /> Silver League
+                    </span>
+                    <span className="px-3 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary font-medium">
+                      9.049 poin
+                    </span>
+                  </div>
+                  <a
+                    href={googleProfileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
+                  >
+                    Lihat profil publik <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {googleBadges.map((badge, i) => (
+                  <motion.a
+                    key={badge.title}
+                    href={googleProfileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.06 }}
+                    whileHover={{ y: -4 }}
+                    className="group relative rounded-2xl border border-border bg-background/40 p-5 hover:border-primary/50 transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-4">
+                      <Cloud className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display font-semibold text-sm text-foreground leading-snug group-hover:text-primary transition-colors">
+                      {badge.title}
+                    </h4>
+                    <p className="text-xs text-muted-foreground mt-2">{badge.track}</p>
+                    <p className="text-xs text-primary/80 mt-3">Earned {badge.date}</p>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Lightbox */}
