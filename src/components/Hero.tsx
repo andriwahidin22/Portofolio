@@ -76,9 +76,7 @@ export const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 Andri
-                <span className="block text-gradient bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">
-                  Wahidin
-                </span>
+                <span className="block text-gradient-animate">Wahidin</span>
               </motion.h1>
             </div>
 
