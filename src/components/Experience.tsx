@@ -5,11 +5,6 @@ import { Briefcase, Users, Calendar, MapPin, X, ChevronLeft, ChevronRight, Image
 import eticket1 from "@/assets/Experience/ETicket/1.png";
 import eticket2 from "@/assets/Experience/ETicket/2.png";
 import eticket3 from "@/assets/Experience/ETicket/3.png";
-import hmj1 from "@/assets/Experience/HMJ/1.JPG";
-import hmj2 from "@/assets/Experience/HMJ/2.JPEG";
-import hmj3 from "@/assets/Experience/HMJ/3.JPEG";
-import hmj4 from "@/assets/Experience/HMJ/4.JPG";
-import hmjAward from "@/assets/Experience/HMJ/Andri HMJ Award.png";
 
 interface ExperienceItem {
   id: number;
@@ -52,7 +47,13 @@ const experienceData: ExperienceItem[] = [
       "Volunteer for PDD Expo (LKS) National Vocational School Competition XXXII 2024",
       "Volunteer for PDD during the 40th Polinela Anniversary and Graduation Ceremony 2024",
     ],
-    images: [hmj1, hmj2, hmj3, hmj4, hmjAward],
+    images: [
+      "/assets/Experience/HMJ/1.jpg",
+      "/assets/Experience/HMJ/2.jpg",
+      "/assets/Experience/HMJ/3.jpg",
+      "/assets/Experience/HMJ/4.jpg",
+      "/assets/Experience/HMJ/award.png",
+    ],
     type: "organization",
     highlight: "Best Special Staff Award 2023",
   },
