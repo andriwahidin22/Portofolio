@@ -256,6 +256,57 @@
     animation: marquee-x 28s linear infinite;
   }
 
+  /* Vertical scanning beam */
+  .beam-v {
+    position: absolute;
+    top: -30%;
+    width: 1px;
+    height: 30%;
+    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.55), transparent);
+  }
+
+  @keyframes beam-fall {
+    0% { transform: translateY(0); opacity: 0; }
+    12% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { transform: translateY(460vh); opacity: 0; }
+  }
+
+  .animate-beam-fall {
+    animation: beam-fall 9s linear infinite;
+  }
+
+  @keyframes particle-rise {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-115vh) translateX(24px); opacity: 0; }
+  }
+
+  .animate-particle-rise {
+    animation: particle-rise 20s linear infinite;
+  }
+
+  .conic-halo {
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      hsl(var(--primary)) 20%,
+      transparent 40%,
+      hsl(280 90% 70%) 60%,
+      transparent 80%,
+      hsl(var(--primary)) 100%
+    );
+  }
+
+  @keyframes halo-spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .animate-halo-spin {
+    animation: halo-spin 60s linear infinite;
+  }
+
   .marquee-mask {
     mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
@@ -273,6 +324,9 @@
   @media (prefers-reduced-motion: reduce) {
     .animate-aurora,
     .animate-marquee,
+    .animate-beam-fall,
+    .animate-particle-rise,
+    .animate-halo-spin,
     .text-gradient-animate,
     .glow-border::before {
       animation: none !important;
