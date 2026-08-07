@@ -299,6 +299,83 @@
     );
   }
 
+  /* --- Section aura effects --- */
+  .perspective-grid {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.14) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.14) 1px, transparent 1px);
+    background-size: 70px 70px;
+    transform: perspective(420px) rotateX(62deg);
+    transform-origin: bottom center;
+    animation: grid-scroll 8s linear infinite;
+    mask-image: linear-gradient(to top, #000, transparent 85%);
+    -webkit-mask-image: linear-gradient(to top, #000, transparent 85%);
+  }
+
+  @keyframes grid-scroll {
+    to { background-position: 0 70px; }
+  }
+
+  .dot-matrix {
+    background-image: radial-gradient(hsl(var(--primary) / 0.22) 1px, transparent 1px);
+    background-size: 26px 26px;
+    animation: grid-scroll 14s linear infinite;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000, transparent 80%);
+  }
+
+  .wave-lines {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      hsl(var(--primary) / 0.08) 0px,
+      hsl(var(--primary) / 0.08) 1px,
+      transparent 1px,
+      transparent 16px
+    );
+    background-size: 200% 200%;
+    animation: gradient-pan 14s ease infinite;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000, transparent 85%);
+  }
+
+  @keyframes orbit-spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .animate-orbit-spin {
+    animation: orbit-spin 30s linear infinite;
+  }
+
+  @keyframes ripple {
+    0% { transform: translate(-50%, -50%) scale(0.4); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; }
+  }
+
+  .animate-ripple {
+    animation: ripple 5s ease-out infinite;
+  }
+
+  @keyframes tilt-float {
+    0%, 100% { transform: translateY(0) rotate(12deg) skewX(-8deg); opacity: 0.35; }
+    50% { transform: translateY(-26px) rotate(-14deg) skewX(8deg); opacity: 0.8; }
+  }
+
+  .animate-tilt-float {
+    animation: tilt-float 9s ease-in-out infinite;
+  }
+
+  .conic-halo-unused {
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      hsl(var(--primary)) 20%,
+      transparent 40%,
+      hsl(280 90% 70%) 60%,
+      transparent 80%,
+      hsl(var(--primary)) 100%
+    );
+  }
+
   @keyframes halo-spin {
     to { transform: translate(-50%, -50%) rotate(360deg); }
   }
@@ -327,6 +404,12 @@
     .animate-beam-fall,
     .animate-particle-rise,
     .animate-halo-spin,
+    .animate-orbit-spin,
+    .animate-ripple,
+    .animate-tilt-float,
+    .perspective-grid,
+    .dot-matrix,
+    .wave-lines,
     .text-gradient-animate,
     .glow-border::before {
       animation: none !important;
