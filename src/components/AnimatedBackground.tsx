@@ -20,6 +20,15 @@ export const AnimatedBackground = () => {
 
   return (
     <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      {/* SVGator animated scene */}
+      <object
+        type="image/svg+xml"
+        data="/animations/hero-reveal.svg"
+        aria-hidden
+        tabIndex={-1}
+        className="absolute inset-0 h-full w-full object-cover opacity-70 pointer-events-none mix-blend-screen"
+      />
+
       <div className="absolute inset-0 grid-backdrop opacity-70" />
 
       {/* Aurora orbs */}
