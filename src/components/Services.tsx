@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Monitor, Smartphone, Zap, Cpu, Code2, LineChart } from "lucide-react";
+import { SectionAura } from "@/components/SectionAura";
 
 const services = [
   {
@@ -42,6 +43,7 @@ export const Services = () => {
 
   return (
     <section id="services" className="py-14 md:py-20 relative" ref={ref}>
+      <SectionAura variant="orbit" />
       {/* Background accent */}
       <div className="absolute top-1/3 -left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
 

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FileText, FileBadge, Calendar, HardDrive, Sparkles } from "lucide-react";
 import { DownloadButton } from "./DownloadButton";
+import { SectionAura } from "@/components/SectionAura";
 
 const documents = [
   {
@@ -44,6 +45,7 @@ const documents = [
 export const Documents = () => {
   return (
     <section id="documents" className="py-14 md:py-20 relative overflow-hidden">
+      <SectionAura variant="waves" />
       {/* Decorative gradients */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px]" />

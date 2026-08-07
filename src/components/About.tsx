@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { SectionAura } from "@/components/SectionAura";
 
 const skills = [
   { name: "HTML & CSS", level: 90 },
@@ -26,6 +27,7 @@ export const About = () => {
 
   return (
     <section id="about" className="py-14 md:py-20 relative" ref={ref}>
+      <SectionAura variant="mesh" />
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

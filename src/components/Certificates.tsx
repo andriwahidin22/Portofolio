@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, X, ExternalLink, Sparkles, ChevronLeft, ChevronRight, Cloud, Trophy } from "lucide-react";
+import { SectionAura } from "@/components/SectionAura";
 
 type Category = "All" | "Professional" | "Skill" | "Organization" | "Training";
 
@@ -149,6 +150,7 @@ export const Certificates = () => {
 
   return (
     <section id="certificates" className="py-14 md:py-20 relative overflow-hidden">
+      <SectionAura variant="rings" />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px]" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-fuchsia-500/5 rounded-full blur-[120px]" />

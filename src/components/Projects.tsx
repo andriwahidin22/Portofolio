@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ExternalLink, Github, Eye, Award, Ticket, ShoppingCart, CheckCircle, Users, Calendar, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SectionAura } from "@/components/SectionAura";
 
 interface Project {
   id: number;
@@ -342,6 +343,7 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="py-14 md:py-20 relative">
+      <SectionAura variant="cubes" />
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-primary/5 -z-10" />
 

@@ -5,6 +5,7 @@ import { Briefcase, Users, Calendar, MapPin, X, ChevronLeft, ChevronRight, Image
 import eticket1 from "@/assets/Experience/ETicket/1.png";
 import eticket2 from "@/assets/Experience/ETicket/2.png";
 import eticket3 from "@/assets/Experience/ETicket/3.png";
+import { SectionAura } from "@/components/SectionAura";
 
 interface ExperienceItem {
   id: number;
@@ -141,6 +142,7 @@ export const Experience = () => {
 
   return (
     <section id="experience" className="py-14 md:py-20 relative" ref={ref}>
+      <SectionAura variant="grid" />
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
