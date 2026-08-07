@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { SectionAura } from "@/components/SectionAura";
 
 const contactInfo = [
   {
@@ -72,6 +73,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-14 md:py-20 relative" ref={ref}>
+      <SectionAura variant="grid" />
       {/* Background accent */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
 
