@@ -205,6 +205,35 @@ export const Experience = () => {
                       } -translate-x-1/2 md:translate-x-0 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-background shadow-[0_0_18px_hsl(var(--primary)/0.8)] animate-pulse-glow`}
                     />
 
+                    {/* Year marker on the opposite side (fills the empty column) */}
+                    <motion.div
+                      initial={{ opacity: 0, x: left ? 30 : -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.08 + 0.15 }}
+                      className={`hidden md:flex absolute top-2 w-1/2 flex-col ${
+                        left ? "left-full pl-12 items-start" : "right-full pr-12 items-end text-right"
+                      }`}
+                    >
+                      <span className="font-display text-6xl lg:text-7xl font-bold leading-none text-transparent [-webkit-text-stroke:1px_hsl(var(--primary)/0.35)] select-none">
+                        {item.period.match(/\d{4}/)?.[0] ?? "—"}
+                      </span>
+                      <span className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
+                        {item.type === "internship" ? "Industry" : "Leadership"}
+                      </span>
+                      <span className="mt-3 text-sm text-muted-foreground/80 max-w-[16rem]">
+                        {item.highlight ?? item.company}
+                      </span>
+                      <span
+                        className={`mt-4 h-px w-24 bg-gradient-to-r ${
+                          left ? "from-primary/60 to-transparent" : "from-transparent to-primary/60"
+                        }`}
+                      />
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-xs text-primary/80">
+                        <Images className="w-3.5 h-3.5" />
+                        {item.images?.length ?? 0} photos
+                      </span>
+                    </motion.div>
+
                     <div className="glow-border shine-hover lift-hover card-gradient rounded-2xl border border-border p-6">
                       <div className="flex flex-wrap items-center gap-2 mb-3">
                         <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/50 px-2.5 py-1 text-xs text-muted-foreground">
