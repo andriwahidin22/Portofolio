@@ -350,6 +350,8 @@ export const Experience = () => {
                 {selectedExperience.images && selectedExperience.images.length > 0 && (
                   <div className="relative bg-muted aspect-video lg:aspect-auto lg:h-full min-h-[300px] lg:min-h-0">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={selectedExperience.images[currentImageIndex]}
                       alt={`Documentation ${currentImageIndex + 1}`}
                       className="w-full h-full object-contain"

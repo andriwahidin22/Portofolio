@@ -400,6 +400,8 @@ export const Projects = () => {
               {/* Project Image with Icon Overlay */}
               <div className="relative h-56 overflow-hidden">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -571,6 +573,8 @@ export const Projects = () => {
                     {/* Main Image */}
                     <div className="relative h-full overflow-hidden rounded-l-2xl">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={selectedProject.images[currentImageIndex]}
                         alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
                         className="w-full h-full object-contain"
@@ -607,6 +611,8 @@ export const Projects = () => {
                             aria-label={`View image ${index + 1}`}
                           >
                             <img
+                              loading="lazy"
+                              decoding="async"
                               src={img}
                               alt={`Thumbnail ${index + 1}`}
                               className="w-full h-full object-cover"

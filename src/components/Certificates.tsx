@@ -212,6 +212,8 @@ export const Certificates = () => {
                   {/* Preview */}
                   <div className="relative aspect-[4/3] overflow-hidden bg-secondary/40">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={cert.image}
                       alt={cert.title}
                       loading="lazy"
@@ -363,6 +365,8 @@ export const Certificates = () => {
 
               <div className="bg-secondary/30 flex items-center justify-center p-4 md:p-8 max-h-[70vh]">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={active.image}
                   alt={active.title}
                   className="max-w-full max-h-[65vh] object-contain rounded-lg shadow-xl"
