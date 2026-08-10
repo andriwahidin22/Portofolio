@@ -1,15 +1,24 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Variant = "grid" | "orbit" | "mesh" | "rings" | "waves" | "cubes";
 
 /**
  * Decorative animated backdrop rendered behind a section.
  * Purely presentational — no pointer events, hidden from a11y tree.
+ * Perf: only mounts on wide screens without reduced-motion preference.
  */
 export const SectionAura = ({ variant = "grid" }: { variant?: Variant }) => {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const wide = window.matchMedia("(min-width: 768px)").matches;
+    setShow(!reduce && wide);
+  }, []);
+
   const dots = useMemo(
     () =>
-      Array.from({ length: 14 }, (_, i) => ({
+      Array.from({ length: 8 }, (_, i) => ({
         id: i,
         top: `${(i * 29) % 100}%`,
         left: `${(i * 53) % 100}%`,
@@ -19,8 +28,10 @@ export const SectionAura = ({ variant = "grid" }: { variant?: Variant }) => {
     []
   );
 
+  if (!show) return null;
+
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div aria-hidden className="aura-layer pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       {variant === "grid" && (
         <>
           <div className="absolute inset-x-0 bottom-0 h-2/3 perspective-grid" />
@@ -33,7 +44,7 @@ export const SectionAura = ({ variant = "grid" }: { variant?: Variant }) => {
           {[420, 640, 880].map((size, i) => (
             <div
               key={size}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/15 animate-orbit-spin"
+              className="gpu-layer absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/15 animate-orbit-spin"
               style={{
                 width: size,
                 height: size * 0.34,
@@ -50,9 +61,9 @@ export const SectionAura = ({ variant = "grid" }: { variant?: Variant }) => {
 
       {variant === "mesh" && (
         <>
-          <div className="absolute -top-24 left-1/4 h-[420px] w-[420px] rounded-full bg-primary/10 blur-[120px] animate-aurora" />
+          <div className="aurora-orb absolute -top-24 left-1/4 h-[420px] w-[420px] rounded-full bg-primary/10 animate-aurora" />
           <div
-            className="absolute bottom-0 right-1/4 h-[380px] w-[380px] rounded-full bg-fuchsia-500/10 blur-[120px] animate-aurora"
+            className="aurora-orb absolute bottom-0 right-1/4 h-[380px] w-[380px] rounded-full bg-fuchsia-500/10 animate-aurora"
             style={{ animationDelay: "-9s" }}
           />
           <div className="absolute inset-0 dot-matrix opacity-40" />
