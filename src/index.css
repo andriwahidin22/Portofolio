@@ -204,12 +204,9 @@
     backface-visibility: hidden;
   }
 
-  /* Cheap soft glow: radial-gradient instead of an expensive blur filter */
+  /* Softer, much cheaper glow than blur-[150px] */
   .aurora-orb {
-    background-image: radial-gradient(closest-side, currentColor, transparent 70%);
-    background-color: transparent !important;
-    color: hsl(var(--primary) / 0.16);
-    filter: blur(40px);
+    filter: blur(56px);
     transform: translateZ(0);
     will-change: transform;
   }
