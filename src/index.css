@@ -197,6 +197,26 @@
 }
 
 @layer utilities {
+  /* Promote animated layers to their own GPU layer (avoids repaint jank) */
+  .gpu-layer {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Softer, much cheaper glow than blur-[150px] */
+  .aurora-orb {
+    filter: blur(56px);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Off-screen sections skip painting their decorative aura */
+  .aura-layer {
+    content-visibility: auto;
+    contain: strict;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
