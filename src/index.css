@@ -197,6 +197,29 @@
 }
 
 @layer utilities {
+  /* Promote animated layers to their own GPU layer (avoids repaint jank) */
+  .gpu-layer {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Cheap soft glow: radial-gradient instead of an expensive blur filter */
+  .aurora-orb {
+    background-image: radial-gradient(closest-side, currentColor, transparent 70%);
+    background-color: transparent !important;
+    color: hsl(var(--primary) / 0.16);
+    filter: blur(40px);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Off-screen sections skip painting their decorative aura */
+  .aura-layer {
+    content-visibility: auto;
+    contain: strict;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
