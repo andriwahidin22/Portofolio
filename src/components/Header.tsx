@@ -19,7 +19,10 @@ export const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
+    let frame = 0;
+
+    const measure = () => {
+      frame = 0;
       setIsScrolled(window.scrollY > 50);
 
       // Update active section based on scroll position
@@ -36,8 +39,18 @@ export const Header = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Throttle to one measurement per animation frame to keep scrolling smooth
+    const handleScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(measure);
+    };
+
+    measure();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const handleNavClick = (href: string) => {
