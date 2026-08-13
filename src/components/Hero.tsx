@@ -191,7 +191,7 @@ export const Hero = () => {
               <div className="flex gap-4">
                 {[
                   { icon: Github, href: "https://github.com/andriwahidin22", label: "GitHub" },
-                  { icon: Linkedin, href: "https://www.linkedin.com/in/andri-wahidin-38b259275/", label: "LinkedIn" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/andriwahidin987/", label: "LinkedIn" },
                   { icon: Instagram, href: "https://instagram.com/andri_wahidin22", label: "Instagram" },
                 ].map(({ icon: Icon, href, label }, index) => (
                   <motion.a
